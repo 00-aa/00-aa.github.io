@@ -1,4 +1,3 @@
-  /*
   let RecaptchaDiv = document.getElementById('recaptcha_container');
   import { CreateRecaptcha, SendVerificationCode, CurrentUser, VerifyCode } from '/firebase.js';
   
