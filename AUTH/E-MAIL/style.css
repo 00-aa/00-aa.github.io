@@ -1,0 +1,92 @@
+  main{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: scroll;
+    padding: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  :root{
+    --blur-white-2: #ffffff22;
+    --blur-black-2: #00000022;
+  }
+  
+  #main_container{
+    width: max(300px, 70vw);
+    max-height: max(500px, 70vh);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: max(10px, 2%);
+  }
+  #main_icon_container{
+    width: max(100px, 20vw);
+    height: max(100px, 20vw);
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--blur-white-2);
+  }
+  
+  
+  
+  #main_greating{
+    font-family: cursive;
+    font-weight: bold;
+    font-size: max(25px, 5vw);
+    text-align: center;
+  }
+  
+  #main_auth_btns_container{
+    width: 100%;
+    min-height: 250px;
+    max-height: 400px;
+    overflow-y: scroll;
+    padding-top: 10px;
+  }
+
+  #main_auth_google,
+  #main_auth_facebook,
+  #main_auth_apple{
+    width: 100%;
+    height: max(50px, 7vh);
+    border: 3px solid var(--blur-white-2);
+    border-radius: 10px;
+    padding: 10px;
+    overflow: hidden;
+    
+    padding: 5px 15px;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    place-items: center;
+    
+    gap: max(15px, 2vw);
+    margin-bottom: 10px;
+    
+    font-weight: bold;
+    font-size: max(15px, 2vw);
+    text-align: left;
+    
+    white-space: nowrap;
+    background: var(--blur-black-2);
+  }
+  
+  #main_auth_google:focus,
+  #main_auth_facebook:focus,
+  #main_auth_apple:focus{
+    background: var(--blur-white-2);
+  }
+  
+  
+  #main_terms_container {
+    font-size: 75%;
+    text-align: left;
+  }
