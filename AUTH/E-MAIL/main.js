@@ -1,4 +1,3 @@
-  /*
   let GoogleAuthButton = document.getElementById('main_auth_google');
   let FacebookAuthButton = document.getElementById('main_auth_facebook');
   let AppleAuthButton = document.getElementById('main_auth_apple');
