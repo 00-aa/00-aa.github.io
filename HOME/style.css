@@ -1,0 +1,116 @@
+  *{
+    color: var(--c-aa);
+    font-weight: bold;
+  }
+  main{
+    width: 100vw;
+    min-height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  :root{
+    --c-aa: #ffffffaa;
+    
+    --bg-white-22: #ffffff22;
+    --bg-white-44: #ffffff44;
+    --bg-white-88: #ffffff88;
+    --bg-white-aa: #ffffffaa;
+    --bg-black-22: #00000022;
+    --bg-black-44: #00000044;
+  }
+  
+  #main_container{
+    width: 100vw;
+    min-height: 100vh;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max(60px, 6vw) auto;
+  }
+  
+  #topbar_container{
+    padding: max(5px, 2vw) max(10px, 5vw);
+  }
+  
+  
+  
+  #sub_container{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max(50px, 5vw) max(200px, 20vw) max(50px, 5vw) auto;
+  }
+  #main_title_container,
+  #sub_title_container{
+    display: flex;
+    align-items: center;
+    padding: 0 max(10px, 5vw);
+  }
+  #main_title_container > span,
+  #sub_title_container > span{
+    font-size: max(20px, 2vw);
+  }
+  #sub_title_container > span{
+    font-size: max(17.5px, 1.75vw);
+  }
+  
+  
+  #banner_container{
+    width: 100%;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    padding: 0 max(10px, 5vw);
+  }
+  #banner{
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    display: flex;
+    border: max(5px, 1vw) solid var(--bg-white-22);
+    border-radius: 10px;
+    
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  #banner_img{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3/1;
+    object-fit: cover;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  
+  
+  #services_opt_container{
+    width: 100%;
+    padding: 0 max(10px, 5vw);
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap: max(5px, 2.5vw);
+  }
+  #services_opt_container > button{
+    width: calc(50% - max(5px, 2.5vw) / 2);
+    height: 25%;
+    
+    border-radius: max(4px, 2vw);
+    border: max(2px, .5vw) solid var(--bg-white-22);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+    text-align: center;
+    
+  }
+  #services_opt_container > button > img{
+    width: 25%;
+  }
