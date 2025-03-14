@@ -1,8 +1,9 @@
   main{
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
     overflow-y: scroll;
-    padding: 50px;
+    
+    padding: min(50px, 10vw);
     
     display: flex;
     align-items: center;
@@ -12,6 +13,7 @@
   img{
     width: 100%;
     height: 100%;
+    aspect-ratio: 1/1;
   }
   
   :root{
@@ -19,24 +21,31 @@
     --blur-black-2: #00000022;
   }
   
+  
   #main_container{
     width: max(300px, 70vw);
-    max-height: max(500px, 70vh);
-    position: relative;
+    height: max(500px, 70vh);
+    overflow-y: scroll;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: max(10px, 2%);
+    gap: min(40px, 4vw);
   }
-  #main_icon_container{
-    width: max(100px, 20vw);
-    height: max(100px, 20vw);
+  
+  #intro_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #icon_container{
+    width: max(100px, 15vh);
+    aspect-ratio: 1/1;
     overflow: hidden;
     border-radius: 50%;
     border: 3px solid var(--blur-white-2);
   }
-  
-  
   
   #main_greating{
     font-family: cursive;
@@ -45,48 +54,49 @@
     text-align: center;
   }
   
-  #main_auth_btns_container{
+  #auth_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #input_container{
     width: 100%;
-    min-height: 250px;
-    max-height: 400px;
+    height: max(300px, 30vh);
     overflow-y: scroll;
-    padding-top: 10px;
   }
 
-  #main_auth_google,
-  #main_auth_facebook,
-  #main_auth_apple{
+  #btn_auth_google,
+  #btn_auth_facebook,
+  #btn_auth_apple{
     width: 100%;
-    height: max(50px, 7vh);
+    height: max(50px, 6vh);
     border: 3px solid var(--blur-white-2);
     border-radius: 10px;
-    padding: 10px;
+    padding: 600px;
     overflow: hidden;
     
-    padding: 5px 15px;
+    padding: min(4px, 20%) min(12px, 40%);
     display: grid;
     grid-template-columns: 1fr 6fr;
     place-items: center;
     
-    gap: max(15px, 2vw);
-    margin-bottom: 10px;
+    margin-bottom: max(5px, 1vh);
     
     font-weight: bold;
     font-size: max(15px, 2vw);
     text-align: left;
-    
-    white-space: nowrap;
     background: var(--blur-black-2);
   }
   
-  #main_auth_google:focus,
-  #main_auth_facebook:focus,
-  #main_auth_apple:focus{
+  #btn_auth_google:focus,
+  #btn_auth_facebook:focus,
+  #btn_auth_apple:focus{
     background: var(--blur-white-2);
   }
   
   
-  #main_terms_container {
+  #terms_container{
     font-size: 75%;
     text-align: left;
   }

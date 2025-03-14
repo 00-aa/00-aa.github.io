@@ -21,51 +21,62 @@
     <meta name="google" content="notranslate">
     
   <!-- FILE CONFIG -->
-    <link rel="stylesheet" href="/app.css" media="all" type="text/css" style=":root{--bg-img-blur: 10px; --bg-img-brightness: 80%;}"/>
-    <link rel="stylesheet" href="/AUTH/E-MAIL/style.css"/>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/app.css" media="all" type="text/css"/>
+    <script src="/app.js" type="module" charset="utf-8" async defer></script>
     
-    <script src="/AUTH/E-MAIL/main.js" type="module" charset="utf-8" async></script>
+    <link rel="stylesheet" href="/AUTH/E-MAIL/style.css"/>
+    <script src="/AUTH/E-MAIL/main.js" type="module" charset="utf-8" async defer></script>
   </head>
   </style>
   <body>
     <main>
-      
       <div id="main_container">
-        <div id="main_icon_container">
-          <img src="/0.png">
-        </div>
-        <div id="main_greating">
-          Welcome to, RK Services.
-        </div>
-        <div id="main_auth_btns_container">
+        
+        
+        
+        <section id="intro_container">
           
-          <button id="main_auth_google">
-            <div>
-              <img src="/ASSETS/ICONS/google.svg" alt="google svg"/>
-            </div>
-            <p>Continue With Google</p>
-          </button>
+          <div id="icon_container">
+            <img src="/0.png">
+          </div>
+          <div id="main_greating">
+            Welcome to, RK Services.
+          </div>
           
-          <button id="main_auth_facebook">
-            <div>
-              <img src="/ASSETS/ICONS/facebook.svg" alt="facebook icon svg" />
-            </div>
-            <p>Continue With Facebook</p>
-          </button>
+        </section>
+        
+        <section id="auth_container">
           
-          <button id="main_auth_apple">
-            <div>
-              <img src="/ASSETS/ICONS/apple.svg" alt="apple icon svg" />
-            </div>
-            <p>Continue With Apple</p>
-          </button>
+          <div id="input_container">
+            <button id="btn_auth_google">
+              <div>
+                <img src="/ASSETS/ICONS/google.svg" alt="google svg"/>
+              </div>
+              <p>Continue With Google</p>
+            </button>
+            
+            <button id="btn_auth_facebook">
+              <div>
+                <img src="/ASSETS/ICONS/facebook.svg" alt="facebook icon svg" />
+              </div>
+              <p>Continue With Facebook</p>
+            </button>
+            
+            <button id="btn_auth_apple">
+              <div>
+                <img src="/ASSETS/ICONS/apple.svg" alt="apple icon svg" />
+              </div>
+              <p>Continue With Apple</p>
+            </button>
+          </div>
+          <div id="terms_container">
+            <p>By continuing, you agree to RK Services's <a href="#">Terms</a> of Service and acknowledge you've read our Privacy Policy.</p>
+          </div>
           
-        </div>
-        <div id="main_terms_container">
-          <p>By continuing, you agree to RK Services's <a href="#">Terms</a> of Service and acknowledge you've read our Privacy Policy.</p>
-        </div>
+        </section>
+        
       </div>
-      
     </main>
   </body>
   </html>
