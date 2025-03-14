@@ -5,6 +5,7 @@
     box-sizing: border-box;
     user-select: none;
     user-zoom: none;
+    -webkit-user-drag: none;
     
     scrollbar-color: transparent transparent;
     scrollbar-width: none;

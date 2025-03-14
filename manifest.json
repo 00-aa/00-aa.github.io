@@ -1,0 +1,29 @@
+  {
+    "name": "RK",
+    "short_name": "RK SERVICES",
+    "id": "V1.1",
+    "description": "App for Everyone To Buy Sell Items.",
+    "display": "standalone",
+    "background_color": "#000",
+    "theme_color": "#000",
+    "start_url": "/HOME/index.html",
+    "scope": "/",
+    "icons": [{
+      "src": "/0.png",
+      "sizes": "2048x2048",
+      "type": "image/png"
+    }],
+    "screenshots": [{
+      "src": "/0.png",
+      "type": "image/png",
+      "sizes": "2048x2048",
+      "form_factor": "narrow",
+      "label": "SCREENSHOT-1"
+    },{
+      "src": "/0.png",
+      "type": "image/png",
+      "sizes": "1024x1024",
+      "form_factor": "narrow",
+      "label": "SCREENSHOT-2"
+    }]
+  }
