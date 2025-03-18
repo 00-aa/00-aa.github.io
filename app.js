@@ -1,52 +1,67 @@
-
+  //debug console
+  (function(){var script=document.createElement('script');script.src="https://cdn.jsdelivr.net/npm/eruda";document.body.append(script);script.onload=function(){eruda.init()}})();
+  
   import { OnAuthChange } from '/firebase.js';
   
+  
+  
+  //INSTANT REDIRECT AUTH
+  if( (!(document.cookie) || !(document.cookie === 'UserValid: true'))  && !(location.pathname === '/AUTH/E-MAIL/index.html') ){
+    document.write('<!--');
+    location.href = '/AUTH/E-MAIL/index.html';
+  }
+  
+  //FIREBASE AUTH
   OnAuthChange((CurrUser)=>{
     if(CurrUser){
-      
-      if(location.pathname === '/AUTH/E-MAIL/index.html'){
-        location.href = '/HOME/index.html';
-      }
-      
+      document.cookie = 'UserValid: true';
     }else{
-      window.stop();
+      document.cookie = 'UserValid: false';
       if(!(location.pathname === '/AUTH/E-MAIL/index.html')){
+        document.write('<!--');
         location.href = '/AUTH/E-MAIL/index.html';
       }
     }
   });
   
-  // REGISTER SEVICE-WORKER
-  const ServiceWorkerFileUrl = "/service-worker.js";
-  if(!(navigator.serviceWorker || "serviceWorker" in navigator)){
-    confirm('SERVICE-WORKER NOT SUPPORTED BY BROWSER :)');
-  }else if((navigator.serviceWorker && "serviceWorker" in navigator)){
-    navigator.serviceWorker.register(ServiceWorkerFileUrl).then((SWRegistration)=>{
-      console.warn('SERVICE-WORKER REGISTERED SUCCESSFULLY');
-      // Trigger SW PWA INSTALL
-      fetch('/0.png').then(()=>{
-        console.log('PWA FETCH!')
-      })
-      SWRegistration.onupdatefound=()=>{
-        SWRegistration.update().then(()=>{
-          console.warn('SERVICE-WORKER UPDATED SUCCESSFULLY');
-        }).catch((err)=>{
-          confirm(err);
-        })
-      }
-    }).catch((err)=>{
-      confirm(err);
-    })
-  };
   
-  // CUSTOMIZE PWA INSTALL PROMPT
-  window.addEventListener("beforeinstallprompt",(event)=>{
-    event.preventDefault();
-    window.PWAInstallprompt = event;
-    console.warn('WEBSITE IS REDY TO DOWNLOAD AS PWA');
+  
+  
+  
+  //PWA THINGS
+  addEventListener('load',()=>{
+    // REGISTER SEVICE-WORKER
+    const ServiceWorkerFileUrl = "/service-worker.js";
+    if(!(navigator.serviceWorker || "serviceWorker" in navigator)){
+      confirm('SERVICE-WORKER NOT SUPPORTED BY BROWSER :)');
+    }else if((navigator.serviceWorker && "serviceWorker" in navigator)){
+      navigator.serviceWorker.register(ServiceWorkerFileUrl).then((SWRegistration)=>{
+        console.warn('SERVICE-WORKER REGISTERED SUCCESSFULLY');
+        // Trigger SW FOR PWA INSTALL
+        fetch('/0.png');
+        
+        SWRegistration.onupdatefound=()=>{
+          SWRegistration.update().then(()=>{
+            console.warn('SERVICE-WORKER UPDATED SUCCESSFULLY');
+          }).catch((err)=>{
+            confirm(err);
+          })
+        }
+      }).catch((err)=>{
+        confirm(err);
+      })
+    };
     
-    onclick=()=>{
-      PWAInstallprompt.prompt();
-    }
+    // CUSTOMIZE PWA INSTALL PROMPT
+    window.addEventListener("beforeinstallprompt",(event)=>{
+      event.preventDefault();
+      window.PWAInstallprompt = event;
+      console.warn('WEBSITE IS REDY TO DOWNLOAD AS PWA');
+      
+      onclick=()=>{
+        PWAInstallprompt.prompt();
+      }
+    });
+    
   });
   
