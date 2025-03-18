@@ -36,7 +36,7 @@
       navigator.serviceWorker.register(ServiceWorkerFileUrl).then((SWRegistration)=>{
         console.warn('SERVICE-WORKER REGISTERED SUCCESSFULLY');
         // Trigger SW FOR PWA INSTALL
-        fetch('/0.png');
+        fetch(ServiceWorkerFileUrl);
         
         SWRegistration.onupdatefound=()=>{
           SWRegistration.update().then(()=>{
