@@ -3,10 +3,9 @@
   
   import { OnAuthChange } from '/firebase.js';
   
-  
-  
   //INSTANT REDIRECT AUTH
-  if( (!(document.cookie) || !(document.cookie === 'UserValid: true'))  && !(location.pathname === '/AUTH/E-MAIL/index.html') ){
+  if( (!(localStorage.getItem('RKUserValid')) || !(localStorage.getItem('RKUserValid') === 'true')) && !(location.pathname === '/AUTH/E-MAIL/index.html') ){
+    //login expired
     document.write('<!--');
     location.href = '/AUTH/E-MAIL/index.html';
   }
@@ -14,17 +13,16 @@
   //FIREBASE AUTH
   OnAuthChange((CurrUser)=>{
     if(CurrUser){
-      document.cookie = 'UserValid: true';
+      localStorage.setItem('RKUserValid','true');
+      localStorage.setItem('RKLastLogIn',new Date().toString());
     }else{
-      document.cookie = 'UserValid: false';
+      localStorage.setItem('RKUserValid','false')
       if(!(location.pathname === '/AUTH/E-MAIL/index.html')){
         document.write('<!--');
         location.href = '/AUTH/E-MAIL/index.html';
       }
     }
   });
-  
-  
   
   
   
