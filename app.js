@@ -27,7 +27,7 @@
   //PWA THINGS
   addEventListener('load',()=>{
     // REGISTER SEVICE-WORKER
-    const ServiceWorkerFileUrl = "service-worker.js";
+    const ServiceWorkerFileUrl = "/service-worker.js";
     if(!(navigator.serviceWorker || "serviceWorker" in navigator)){
       confirm('SERVICE-WORKER NOT SUPPORTED BY BROWSER :)');
     }else if(navigator.serviceWorker.controller){
