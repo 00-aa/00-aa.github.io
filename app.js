@@ -24,15 +24,15 @@
     }
   });
   
-  
-  
   //PWA THINGS
   addEventListener('load',()=>{
     // REGISTER SEVICE-WORKER
-    const ServiceWorkerFileUrl = "https://00-aa.github.io/service-worker.js";
+    const ServiceWorkerFileUrl = "/service-worker.js";
     if(!(navigator.serviceWorker || "serviceWorker" in navigator)){
       confirm('SERVICE-WORKER NOT SUPPORTED BY BROWSER :)');
-    }else if((navigator.serviceWorker && "serviceWorker" in navigator)){
+    }else if(navigator.serviceWorker.controller){
+      console.warn('SERVICE-WORKER ALREDY REGISTERED');
+    }else if((navigator.serviceWorker || "serviceWorker" in navigator) && !(navigator.serviceWorker.controller)){
       navigator.serviceWorker.register(ServiceWorkerFileUrl).then((SWRegistration)=>{
         console.warn('SERVICE-WORKER REGISTERED SUCCESSFULLY');
         // Trigger SW FOR PWA INSTALL
@@ -42,13 +42,15 @@
           SWRegistration.update().then(()=>{
             console.warn('SERVICE-WORKER UPDATED SUCCESSFULLY');
           }).catch((err)=>{
-            confirm(err);
+            console.error(err);
           })
         }
       }).catch((err)=>{
-        confirm(err);
+        console.error(err);
       })
-    };
+    }else{
+      confirm('SERVICE-WORKER NOT REGISTERED DUE TO UNKNOWN ERROR');
+    }
     
     // CUSTOMIZE PWA INSTALL PROMPT
     window.addEventListener("beforeinstallprompt",(event)=>{
@@ -62,4 +64,5 @@
     });
     
   });
+  
   
