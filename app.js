@@ -49,7 +49,7 @@
         console.error(err);
       })
     }else{
-      confirm('SERVICE-WORKER NOT REGISTERED DUE TO UNKNOWN ERROR');
+      console.error('SERVICE-WORKER NOT REGISTERED DUE TO UNKNOWN ERROR');
     }
     
     // CUSTOMIZE PWA INSTALL PROMPT
@@ -62,7 +62,7 @@
         PWAInstallprompt.prompt();
       }
     });
-    
   });
+  
   
   
