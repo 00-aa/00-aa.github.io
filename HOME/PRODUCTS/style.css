@@ -1,0 +1,122 @@
+  *{
+    color: var(--c-cc);
+    font-weight: bold;
+  }
+  :root{
+    --c-cc: #ffffffcc;
+    --c-g-aa: #00ff00aa;
+    
+    --bg-white-22: #ffffff22;
+    --bg-white-44: #ffffff44;
+    --bg-white-88: #ffffff88;
+    --bg-white-aa: #ffffffaa;
+    --bg-black-22: #00000022;
+    --bg-black-44: #00000044;
+  }
+  
+  img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  
+  main{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: scroll;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  #product_container{
+    width: 100vw;
+    height: max(80px, 10vh);
+    overflow: hidden;
+    
+    padding: max(2px, 1%) max(10px, 4%);
+    
+  }
+  #product{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: max(10px, 4%);
+    
+    overflow: hidden;
+    padding: max(5px, 2%);
+    border: max(3px, .6vw) solid var(--bg-white-22);
+    border-radius: max(10px, 1vw);
+  }
+  #product_basic_info_container{
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 1fr;
+    gap: 20px;
+  }
+  #icon_container{
+    height: 100%;
+    width: auto;
+  }
+  #info_container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+    text-justify: center;
+    
+  }
+  #product_name,
+  #produck_prise{
+    font-size: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #produck_prise{
+    font-size: 80%;
+    font-family: monospace;
+    color: var(--c-g-aa);
+  }
+  
+  #product_container:hover{
+    height: auto;
+  }
+  
+  #product_detail_info_container{
+    display: flex;
+    flex-direction: column;
+  }
+  #product_discription_container{
+    overflow-y: scroll;
+    max-height: 200px;
+  }
+  #product_img_container{
+    overflow-x: scroll;
+    padding: max(10px, 5%);
+    display: flex;
+    
+    gap: max(10px, 1vw);
+  }
+  #product_img_container > img{
+    border: max(2px, .4vw) solid var(--bg-white-22);
+    border-radius: max(10px, 1vw);
+    height: 100%;
+  }
+  #product_opt_container{
+    display: flex;
+    gap: max(10px, 1vw);
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  #product_opt_container > button{
+    padding: max(10px, 1vw) max(20px, 2vw);
+    text-align: center;
+    border: none;
+    border-radius: max(10px, 1vw);
+    background: var(--bg-white-22);
+  }
