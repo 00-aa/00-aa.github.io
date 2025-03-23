@@ -6,6 +6,8 @@
     user-select: none;
     user-zoom: none;
     -webkit-user-drag: none;
+    overscroll-behavior: auto;
+    accent-color: #000;
     
     scrollbar-color: transparent transparent;
     scrollbar-width: none;
@@ -20,7 +22,7 @@
   :root {
     --bg-img-url: url("/ASSETS/BACKGROUNDS/3.jpeg");
     --bg-img-blur: 10px;
-    --bg-img-brightness: 80%;
+    --bg-img-brightness: 110%;
     --img-preload: var(--bg-img-url);
   }
   
@@ -70,25 +72,31 @@
     box-shadow: 0 20px 50px #000 inset, 0 -20px 50px #000 inset;
   }
   
-/* PAGE LOAD & UNLOAD ANJMATION *//*
+/* PAGE LOAD & UNLOAD ANJMATION */
   @view-transition{
     navigation: auto;
   }
   ::view-transition-old(root){
-    animation: 1s ease-in both page-load-out;
+    animation: 1s ease both page-load-out;
   }
   ::view-transition-new(root){
-    animation: 1s ease-in both page-load-in;
+    animation: 1s ease both page-load-in;
   }
   @keyframes page-load-in{
     from{
       opacity: 0;
+      visibility: hidden;
+      translate: -50vw;
     }to{
       opacity: 1;
+      visibility: visible;
+      Translate: 0;
     }
   }
   @keyframes page-load-out{
     to{
       opacity: 0;
+      visibility: hidden;
+      translate: 50vw;
     }
-  }*/
+  }
