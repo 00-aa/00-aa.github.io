@@ -1,10 +1,10 @@
   
-  for (let i = 0; i < 20; i++){
+  for(let i = 0; i < 30; i++){
     AddPro({
-      name: 'Nissan Gtr'+i,
+      name: 'Nissan Gtr '+i,
       icon: '/DEMO/0.jpeg',
       prise: '$ 2,20,00,00 (2.2 cr)',
-      description: 'des: hello world cup and informal and location of buttons on road price hi nahi hai 😅',
+      description: 'des: The Nissan GT-R, often nicknamed "Godzilla," is a high-performance, luxury sports car known for its powerful engine, all-wheel drive, and exceptional acceleration, designed for both grand touring and racing.',
       pic: ['/DEMO/0.jpeg','/DEMO/1.jpeg','/DEMO/2.jpeg','/DEMO/3.jpeg','/DEMO/0.jpeg','/DEMO/1.jpeg','/DEMO/2.jpeg','/DEMO/3.jpeg']
     });
   }
@@ -14,7 +14,7 @@
     ProObj.pic.forEach((picurl)=>{
       Pictures += '<img src="'+picurl+'">'
     });
-    main.innerHTML += 
+    product_list_container.innerHTML += 
     `
       <div id="product_container">
         <div id="product">
@@ -39,17 +39,31 @@
               ${String(Pictures)}
             </div>
             <div id="product_opt_container">
-              <button>Buy</button>
+              <form onsubmit="StrToObj(this.getAttribute('data'),this.inp.value='');return false;" data='${JSON.stringify(ProObj)}'>
+                <label for="inp_product_quantity">Qua: <input name="inp" type="number" id="inp_product_quantity" min="1" max="100" required></label>
+                <button type="submit">Add to Cart</button>
+              </form>
               <button>Help</button>
-              <button>Contact</button>
             </div>
           </div>
         </div>
       </div>
-    `
+    `;
+    
   }
   
   
   
-  
-  
+  window.StrToObj = (ProData,ProQua)=>{
+    let OrderProObj = JSON.parse(ProData);
+    OrderProObj.quantity = Number(ProQua);
+    OrderProObj.orderplacedon = Date.now();
+    OrderProObj.id = 'Order_'+(Date.now()*Math.floor(Math.random()*999999)).toString(32);
+    delete OrderProObj.description;
+    delete OrderProObj.pic;
+    
+    let ObjStr = JSON.stringify(OrderProObj);
+    localStorage.setItem(OrderProObj.id,ObjStr);
+    
+    confirm('Order Added to Cart! 🛒');
+  }
