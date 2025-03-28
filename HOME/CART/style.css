@@ -1,0 +1,122 @@
+  *{
+    color: var(--c-cc);
+    font-weight: bold;
+  }
+  :root{
+    --c-cc: #ffffffcc;
+    --bg-white-55: #ffffff55;
+    --bg-white-11: #ffffff11;
+    
+    --bg-blue-aa: #00aaffaa;
+    
+    --boder-radious-default: max(5px, 2.5vw);
+    --boder-default: max(2px, 1vw) solid var(--bg-white-55);
+    --boder-default-1: max(1px, .5vw) solid var(--bg-white-55);
+    --padding-default-small: max(5px, 2.5vw);
+    --padding-default-large: max(10px, 5vw);
+  }
+  
+  img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  
+  main{
+    width: 100vw;
+    min-height: 100vh;
+    overflow-y: scroll;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max(60px, 12vw) 1fr max(70px, 14vw);
+    
+  }
+  #topbar_container{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: max(5px, 2vw);
+    
+    overflow: hidden;
+    padding: max(4px, 2vw);
+  }
+  #topbar_container > a{
+    height: 100%;
+    aspect-ratio: 1/1;
+    
+    overflow: hidden;
+    padding: max(4px, 2vw);
+    border: none;
+  }
+  #topbar_container > a > img{
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  
+  #product_list_container{
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+  }
+  
+  #bottombar_container{
+    background: var(--bg-white-11);
+    border-top: var(--boder-default);
+    
+    display: grid;
+    place-items: center;
+    padding: var(--padding-default-small);
+  }
+  #btn_order_all{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-blue-aa);
+    border: none;
+    border-radius: var(--boder-radious-default);
+  }
+  
+  
+  
+  
+  #product_container{
+    width: 100%;
+    height: max(90px, 12vh);
+    padding: var(--padding-default-small);
+  }
+  #product{
+    width: 100%;
+    height: 100%;
+    border: var(--boder-default-1);
+    border-radius: var(--boder-radious-default);
+    padding: var(--padding-default-small);
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+  }
+  
+  #pro_info_container{
+    display: grid;
+    grid-template-areas:
+    "name name"
+    "prise quantity";
+    align-items: center;
+  }
+  #pro_name_container{
+    grid-area: name;
+  }
+  #pro_prise_container{
+    grid-area: prise;
+  }
+  #pro_quantity_container{
+    grid-area: quantity;
+  }
+  #pro_name_container,
+  #pro_prise_container,
+  #pro_quantity_container{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
