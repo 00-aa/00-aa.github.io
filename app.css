@@ -20,7 +20,7 @@
   
 /* CSS VARIABLES */
   :root {
-    --bg-img-url: url("/ASSETS/BACKGROUNDS/3.jpeg");
+    --bg-img-url: url("/ASSETS/BACKGROUNDS/0.jpeg");
     --bg-img-blur: 10px;
     --bg-img-brightness: 110%;
     --img-preload: var(--bg-img-url);
