@@ -39,7 +39,7 @@
               ${String(Pictures)}
             </div>
             <div id="product_opt_container">
-              <form onsubmit="StrToObj(this.getAttribute('data'),this.inp.value='');return false;" data='${JSON.stringify(ProObj)}'>
+              <form onsubmit="StrToObj(this.getAttribute('data'),this.inp.value);this.inp.value=null;return false;" data='${JSON.stringify(ProObj)}'>
                 <label for="inp_product_quantity">Qua: <input name="inp" type="number" id="inp_product_quantity" min="1" max="100" required></label>
                 <button type="submit">Add to Cart</button>
               </form>
