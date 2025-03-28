@@ -31,9 +31,30 @@
     grid-template-rows: max(60px, 6vw) auto;
   }
   
+  
   #topbar_container{
-    padding: max(5px, 2vw) max(10px, 5vw);
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: max(5px, 2vw);
+    
+    overflow: hidden;
+    padding: max(5px, 2vw);
   }
+  #topbar_container > a{
+    height: 100%;
+    aspect-ratio: 1/1;
+    
+    overflow: hidden;
+    padding: max(2px, 1vw);
+  }
+  #topbar_container > a > img{
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  
+  
   
   
   
@@ -70,7 +91,7 @@
     height: 100%;
     max-width: 600px;
     display: flex;
-    border: max(5px, 1vw) solid var(--bg-white-22);
+    border: max(2px, 1vw) solid var(--bg-white-22);
     border-radius: 10px;
     
     flex-direction: row;
@@ -90,15 +111,13 @@
   #services_opt_container{
     width: 100%;
     padding: 0 max(10px, 5vw);
-    display: flex;
-    flex-wrap: wrap;
+    display: flexbox;
+    columns: 2;
     
-    gap: max(5px, 2.5vw);
     overflow-y: scroll;
-    
   }
   #services_opt_container > a{
-    width: calc(50% - max(5px, 2.5vw) / 2);
+    width: calc(100% - max(5px, 2.5vw) / 2);
     height: 25%;
     
     border-radius: max(4px, 2vw);
@@ -109,6 +128,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
+    margin-bottom: 10px;
     
     text-align: center;
     text-decoration: none;

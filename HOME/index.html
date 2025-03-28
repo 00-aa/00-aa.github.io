@@ -28,13 +28,20 @@
     <link rel="stylesheet" href="/HOME/style.css"/>
     <script src="/HOME/main.js" type="module" charset="utf-8" async defer></script>
   </head>
+  <style>
+    :root{
+      --bg-img-url: url("/ASSETS/BACKGROUNDS/2.jpeg");
+      --bg-img-blur: 10px;
+      --bg-img-brightness: 80%;
+    }
   </style>
   <body>
     <main>
       <div id="main_container">
         
         <nav id="topbar_container">
-          <span>Comming Soon</span>
+          <a href="/HOME/CART/index.html"><img src="/ASSETS/ICONS/cart.svg"></a>
+          <a href="#"><img src="/ASSETS/ICONS/user.svg"></a>
         </nav>
         <div id="sub_container">
           <div id="main_title_container">
@@ -42,49 +49,42 @@
           </div>
           <div id="banner_container">
             <div id="banner">
-              <img src="/ASSETS/BANNERS/0.jpeg" id="banner_img">
-              <img src="/ASSETS/BANNERS/1.jpeg" id="banner_img">
-              <img src="/ASSETS/BANNERS/2.jpeg" id="banner_img">
-              <img src="/ASSETS/BANNERS/3.jpeg" id="banner_img">
-              <img src="/ASSETS/BANNERS/4.jpeg" id="banner_img">
-              <img src="/ASSETS/BANNERS/5.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/0.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/1.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/2.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/3.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/4.jpeg" id="banner_img">
+              <img loading="lazy" src="/ASSETS/BANNERS/5.jpeg" id="banner_img">
             </div>
           </div>
           <div id="sub_title_container">
             <span>All Services</span>
           </div>
           <div id="services_opt_container">
-            <a href="#">
-              <img src="/ASSETS/ICONS/cart.svg">
-              <span>Shopping</span>
-            </a>
-            <a href="#">
-              <img src="/ASSETS/ICONS/sell.svg">
-              <span>Selling</span>
-            </a>
             <a href="/HOME/PRODUCTS/index.html">
               <img src="/ASSETS/ICONS/basket.svg">
               <span>Product's</span>
             </a>
-            <a href="#">
+            <a href="/HOME/PRODUCTS/index.html">
+              <img src="/ASSETS/ICONS/sell.svg">
+              <span>Selling</span>
+            </a>
+            
+            <a href="/HOME/PRODUCTS/index.html">
               <img src="/ASSETS/ICONS/services.svg">
               <span>Services</span>
             </a>
-            <a href="#">
+            <a href="/HOME/PRODUCTS/index.html">
               <img src="/ASSETS/ICONS/sale.svg">
               <span>Sale</span>
             </a>
             
             
-            <a>
+            <a href="/HOME/PRODUCTS/index.html">
               <img src="/ASSETS/ICONS/loader.svg">
               <span>Comming Soon</span>
             </a>
-            <a>
-              <img src="/ASSETS/ICONS/loader.svg">
-              <span>Comming Soon</span>
-            </a>
-            <a>
+            <a href="/HOME/PRODUCTS/index.html">
               <img src="/ASSETS/ICONS/loader.svg">
               <span>Comming Soon</span>
             </a>
