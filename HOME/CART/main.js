@@ -38,8 +38,8 @@
   btn_order_all.onclick=()=>{
     LocalAllOrderKey.forEach((Key)=>{
       localStorage.removeItem(Key);
-      confirm('Order Placed');
       location.reload();
-    })
+    });
+    confirm('Order Placed');
   }
   

@@ -30,7 +30,7 @@
     
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: max(60px, 12vw) 1fr max(70px, 14vw);
+    grid-template-rows: 8% 82% 10%;
     
   }
   #topbar_container{
