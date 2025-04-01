@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+  <html lang="en" translate="no">
+  <head>
+  <!-- BROWSER CONFIG -->
+    <title>RK_SERVICES:ADMINPANIL</title>
+    <meta name="theme-color" content="#000">
+    <link rel="shortcut icon" type="image/x-icon" sizes="1024x1024" href="/0.png">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=off,maximum-scale=1">
+  <!-- FILE CONFIG -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/app.css" media="all" type="text/css"/>
+    <script defer async src="/app.js" type="module" charset="utf-8"></script>
+    <link rel="stylesheet" href="/ADM1N/.css"/>
+    <script src="/ADM1N/.js" type="module" charset="utf-8" async defer></script>
+  </head>
+  <style>
+    :root{
+      --bg-img-url: url("/ASSETS/BACKGROUNDS/3.jpeg");
+      --bg-img-blur: 10px;
+      --bg-img-brightness: 80%;
+    }
+  </style>
+  <body>
+    <main>
+      <div id="slider_container">
+        <section id="banners_section">
+          <h1>BANNERS</h1>
+          <div id="banners_container">
+            <input type="file" id="INP_FILE_BANNERS" accept="image/*" onchange="UplodBanner(this)" multiple max="5"/>
+            
+          </div>
+        </section>
+        <section id="products_section">
+          <h1>PRODUCTS</h1>
+          <div id="products_container">
+            
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+  </html>
