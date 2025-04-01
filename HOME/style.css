@@ -97,6 +97,9 @@
     flex-direction: row;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    background: transparent url("/ASSETS/ICONS/loader.svg") center fixed no-repeat;
+    background-position: 50% 25%;
+    background-size: 25%;
   }
   #banner_img{
     width: 100%;
