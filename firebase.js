@@ -39,5 +39,46 @@
     })
   }
   
+  async function IsAdmin(){
+    return new Promise((Resolve)=>{
+      try{
+        Auth.onAuthStateChanged((User)=>{
+          if(User){
+            get(ref(Database,'ADMINISTRATORS/'+User.uid)).then((Res)=>{
+              if(Res.exists()){
+                Resolve(true);
+              }else{
+                Resolve(false);
+              }
+            }).catch((err)=>{
+              Resolve(false);;
+            })
+          }else{
+            Resolve(false);
+          }
+        });
+      }catch(err){
+        Resolve(false);
+      }
+    })
+  }
   
- export {  AuthEmailGoogle, OnAuthChange, GetCurrentUserDetails };
+  async function OnChildAdded(DbPathToListen = '/', fun){
+    onChildAdded(ref(Database, DbPathToListen), (event)=>{
+      fun(event);
+    })
+  }
+  
+  async function Create(Path = null, Obj = null){
+    set(ref(Database, Path),Obj);
+  }
+  
+  async function Delet(Path){
+    remove(ref(Database, Path));
+  }
+  
+  async function RandomPath(ParentPath){
+    return await push(child(ref(Database), ParentPath)).key;
+  }
+  
+ export {  AuthEmailGoogle, OnAuthChange, GetCurrentUserDetails, IsAdmin, OnChildAdded, Create, Delet, RandomPath };

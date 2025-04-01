@@ -15,7 +15,12 @@
     color: #fff;
     
     font-family: sans-serif;
-    font-size: 100%;
+    color-scheme: dark light;
+  }
+  
+  img{
+    display: block;
+    max-width: 100%;
   }
   
 /* CSS VARIABLES */
