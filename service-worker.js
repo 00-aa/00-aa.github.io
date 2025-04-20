@@ -1,7 +1,7 @@
 // MAIN CACHE CONFIG
   const ToCacheFileList = [
     '/0.png'
-  ],CacheName = 'v1.3',
+  ],CacheName = 'v1.9',
   ErrorIndex = '/HOME/index.html';
   
   

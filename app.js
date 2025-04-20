@@ -1,4 +1,5 @@
-  import { OnAuthChange } from "/firebase.js";
+  import { OnAuthStateChanged } from "/firebase.js";
+  
   //INSTANT REDIRECT AUTH
   if(!(localStorage.getItem("RKUserValid") === "true") && !(location.pathname === "/AUTH/E-MAIL/index.html") ){
     //login expired
@@ -6,7 +7,7 @@
   }
   
   //FIREBASE AUTH
-  OnAuthChange((CurrUser)=>{
+  OnAuthStateChanged((CurrUser)=>{
     if(CurrUser){
       localStorage.setItem("RKUserValid","true");
       localStorage.setItem("RKLastLogIn", Date.now());
@@ -17,6 +18,7 @@
       }
     }
   });
+  
   
   //PWA THINGS
   addEventListener("load",()=>{
@@ -52,8 +54,9 @@
       window.PWAInstallprompt = event;
       console.warn("WEBSITE IS REDY TO DOWNLOAD AS PWA");
       
-      onclick=()=>{
+      onclick = ()=>{
         PWAInstallprompt.prompt();
       }
     });
   });
+  

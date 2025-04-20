@@ -6,6 +6,7 @@
     user-select: none;
     user-zoom: none;
     -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
     overscroll-behavior: auto;
     accent-color: #000;
     
@@ -14,20 +15,21 @@
     background: transparent;
     color: #fff;
     
-    font-family: sans-serif;
+    font-family: inherit, sans-serif;
     color-scheme: dark light;
   }
   
   img{
     display: block;
     max-width: 100%;
+    max-height: 100%;
   }
   
 /* CSS VARIABLES */
-  :root {
+  :root{
     --bg-img-url: url("/ASSETS/BACKGROUNDS/0.jpeg");
-    --bg-img-blur: 10px;
-    --bg-img-brightness: 110%;
+    --bg-img-blur: 0px;
+    --bg-img-brightness: 100%;
     --img-preload: var(--bg-img-url);
   }
   
@@ -37,11 +39,10 @@
   }
   html,body{
     width: 100vw;
-    min-height: 100dvh;
+    min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 1;
-    
   }
   
 /* PRELOAD BACKGROUND IMAGES */
@@ -74,7 +75,9 @@
     z-index: -1;
     backdrop-filter: blur(var(--bg-img-blur)) brightness(var(--bg-img-brightness));
     -webkit-backdrop-filter: blur(var(--bg-img-blur)) brightness(var(--bg-img-brightness));
-    box-shadow: 0 20px 50px #000 inset, 0 -20px 50px #000 inset;
+    box-shadow: 
+    0 20px 50px #000 inset,
+    0 -20px 50px #000 inset;
   }
   
 /* PAGE LOAD & UNLOAD ANJMATION */
@@ -82,26 +85,24 @@
     navigation: auto;
   }
   ::view-transition-old(root){
-    animation: 1s ease both page-load-out;
+    animation: 1s ease-in-out both page-load-out;
   }
   ::view-transition-new(root){
-    animation: 1s ease both page-load-in;
+    animation: 1s ease-in-out both page-load-in;
   }
   @keyframes page-load-in{
     from{
       opacity: 0;
       visibility: hidden;
-      translate: -50vw;
+      
     }to{
       opacity: 1;
       visibility: visible;
-      Translate: 0;
     }
   }
   @keyframes page-load-out{
     to{
       opacity: 0;
       visibility: hidden;
-      translate: 50vw;
     }
   }
