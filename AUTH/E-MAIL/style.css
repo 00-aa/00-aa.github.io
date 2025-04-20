@@ -1,102 +1,132 @@
-  main{
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-    
-    padding: min(50px, 10vw);
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  img{
-    width: 100%;
-    height: 100%;
-    aspect-ratio: 1/1;
+  @font-face{
+    font-family: Custom1;
+    src: url("/ASSETS/FONTS/0.ttf");
   }
   
   :root{
-    --blur-white-2: #ffffff22;
-    --blur-black-2: #00000022;
+    --padding-default-1: min(10px, 5vw);
+    --padding-default-2: min(20px, 10vw);
+    
+    --border-default-small-light: min(2px, 1vw) solid #ffffff22;
+    --border-default-small-dark: min(2px, 1vw) solid #00000022;
+    
+    --border-default-big-light: min(4px, 2vw) solid #ffffff22;
+    --border-default-big-dark: min(4px, 2vw) solid #ffffff44;
+    
+    --radious-default-1: min(10px, 5vw);
+    --radious-default-2: min(20px, 10vw);
+    --radious-default-3: min(40px, 20vw);
+    
+    --background-light-default-1: #ffffff22;
+    --background-light-default-2: #ffffff44;
+    --background-light-default-3: #ffffff66;
+    
+    --background-dark-default-1: #00000022;
+    --background-dark-default-2: #00000044;
+    --background-dark-default-3: #00000066;
   }
   
+  main{
+    width: 100dvw;
+    height: 100dvh;
+    
+    display: grid;
+    place-items: center;
+  }
   
-  #main_container{
-    width: max(300px, 70vw);
-    height: max(500px, 70vh);
-    overflow-y: scroll;
+  .background_glass::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  .background_glass::before{
+    backdrop-filter: blur(5px);
+  }
+  
+  .main_container{
+    --default-size: clamp(min(100%, 300px), 90%, 500px);
+    width: var(--default-size);
+    height: var(--default-size);
+    padding: calc(var(--padding-default-2) * 2) var(--padding-default-2);
+    
+    position: relative;
+    border: var(--border-default-big-light);
+    border-radius: var(--radious-default-2);
+    
+    background: var(--background-dark-default-2);
     
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: min(40px, 4vw);
+    row-gap: 10px;
   }
   
-  #intro_container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .title_container{
+    font-family: Custom1, sans-serif;
+    flex-shrink: 0;
+    white-space: wrap;
+    min-height: min(10%, 100px);
   }
-  
-  #icon_container{
-    width: max(100px, 15vh);
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 3px solid var(--blur-white-2);
-  }
-  
-  #main_greating{
-    font-family: cursive;
-    font-weight: bold;
-    font-size: max(25px, 5vw);
+  .main_title_container{
     text-align: center;
   }
+  .main_sub_title_container{
+    text-align: left;
+  }
   
-  #auth_container{
+  .main_options_container{
+    height: 100%;
+    overflow-y: scroll;
+    
     display: flex;
     flex-direction: column;
+    row-gap: 5px;
+  }
+  
+  .btn_option{
+    width: 100%;
+    height: clamp(55px, 12%, 90px);
+    
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: none;
+    border-radius: 100dvh;
+    background: var(--background-light-default-1);
+    
+    padding: var(--padding-default-1);
+    transition: .25s linear;
+  }
+  
+  .btn_option:hover{
+    background: var(--background-light-default-3);
+    border: var(--border-default-small-light);
+  }
+  .btn_ico_container{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    display: flex;
+    flex-direction: row;
     align-items: center;
-  }
-  
-  #input_container{
-    width: 100%;
-    height: max(300px, 30vh);
-    overflow-y: scroll;
-  }
-
-  #btn_auth_google,
-  #btn_auth_facebook,
-  #btn_auth_apple{
-    width: 100%;
-    height: max(50px, 6vh);
-    border: 3px solid var(--blur-white-2);
-    border-radius: 10px;
-    padding: 600px;
-    overflow: hidden;
+    justify-content: center;
     
-    padding: min(4px, 20%) min(12px, 40%);
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-    place-items: center;
+    column-gap: 10px;
+  }
+  .btn_option_title_container,
+  .btn_option_icon_container,
+  .btn_option_title,
+  .btn_option_icon{
+    flex-shrink: 0;
+    height: 100%;
+    align-content: center;
     
-    margin-bottom: max(5px, 1vh);
-    
-    font-weight: bold;
-    font-size: max(15px, 2vw);
-    text-align: left;
-    background: var(--blur-black-2);
-  }
-  
-  #btn_auth_google:focus,
-  #btn_auth_facebook:focus,
-  #btn_auth_apple:focus{
-    background: var(--blur-white-2);
+    font-weight: bolder;
+    font-size: 101%;
+    color: inherit, #fff;
   }
   
   
-  #terms_container{
-    font-size: 75%;
-    text-align: left;
-  }

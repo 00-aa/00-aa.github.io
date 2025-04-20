@@ -3,15 +3,17 @@
   <head>
   <!-- BROWSER CONFIG -->
     <title>RK_SERVICES:AUTH > E-MAIL</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="RK SERVICES">
+    <meta name="keywords" content="WEBAPP, APP, APK, WEBSITE">
     <meta name="theme-color" content="#000">
     
     <link rel="shortcut icon" type="image/x-icon" sizes="1024x1024" href="/0.png">
-    <meta property="og:image" content="/0.png">
+    <meta property="og:image" content="https://00-aa.github.io/0.png">
+    <meta property="og:image:secure_url" content="https://00-aa.github.io/0.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1024">
     <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="website logo png">
     
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=off,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -23,59 +25,89 @@
   <!-- FILE CONFIG -->
     <link rel="manifest" href="/manifest.json">
     <link rel="stylesheet" href="/app.css" media="all" type="text/css"/>
-    <script src="/app.js" type="module" charset="utf-8" async defer></script>
+    <script defer async src="/app.js" type="module" charset="utf-8"></script>
     
     <link rel="stylesheet" href="/AUTH/E-MAIL/style.css"/>
     <script src="/AUTH/E-MAIL/main.js" type="module" charset="utf-8" async defer></script>
   </head>
+  <style>
+    :root{
+      --bg-img-url: url("/ASSETS/BACKGROUNDS/2.jpeg");
+      --bg-img-blur: 0px;
+      --bg-img-brightness: 100%;
+    }
   </style>
   <body>
     <main>
-      <div id="main_container">
-        
-        
-        
-        <section id="intro_container">
-          
-          <div id="icon_container">
-            <img src="/0.png">
-          </div>
-          <div id="main_greating">
-            Welcome to, RK Services.
-          </div>
-          
-        </section>
-        
-        <section id="auth_container">
-          
-          <div id="input_container">
-            <button id="btn_auth_google">
-              <div>
-                <img src="/ASSETS/ICONS/google.svg" alt="google svg"/>
-              </div>
-              <p>Continue With Google</p>
-            </button>
-            
-            <button id="btn_auth_facebook">
-              <div>
-                <img src="/ASSETS/ICONS/facebook.svg" alt="facebook icon svg" />
-              </div>
-              <p>Continue With Facebook</p>
-            </button>
-            
-            <button id="btn_auth_apple">
-              <div>
-                <img src="/ASSETS/ICONS/apple.svg" alt="apple icon svg" />
-              </div>
-              <p>Continue With Apple</p>
-            </button>
-          </div>
-          <div id="terms_container">
-            <p>By continuing, you agree to RK Services's <a href="#">Terms</a> of Service and acknowledge you've read our Privacy Policy.</p>
-          </div>
-          
-        </section>
-        
+      <div class="main_container background_glass">
+        <span class="main_title_container title_container">
+          <h1>Webcome Back</h1>
+        </span>
+        <span class="main_sub_title_container title_container">
+          <h5>Choose An Option To Continue,<br>RK SERVICES</h5>
+        </span>
+        <div class="main_options_container">
+          <button class="btn_option" id="btn_google_auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/google.svg" alt="google logo svg">
+              </span>
+              <span class="btn_option_title_container">
+                <p class="btn_option_title">Continue With Google</p>
+              </span>
+            </div>
+          </button>
+          <button class="btn_option" id="btn_facebook_auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/facebook.svg" alt="facebook logo svg">
+              </span>
+              <span class="btn_option_title_containet">
+                <p class="btn_option_title">Continue With Facebook</p>
+              </span>
+            </div>
+          </button>
+          <button class="btn_option" id="btn_twitter_auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/twitter.svg" alt="twitter logo svg">
+              </span>
+              <span class="btn_option_title_containet">
+                <p class="btn_option_title">Continue With Twitter</p>
+              </span>
+            </div>
+          </button>
+          <button class="btn_option" id="btn__auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/github.svg" alt="github logo svg">
+              </span>
+              <span class="btn_option_title_containet">
+                <p class="btn_option_title">Continue With Github</p>
+              </span>
+            </div>
+          </button>
+          <button class="btn_option" id="btn_apple_auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/apple.svg" alt="apple logo svg">
+              </span>
+              <span class="btn_option_title_containet">
+                <p class="btn_option_title">Continue With Apple</p>
+              </span>
+            </div>
+          </button>
+          <button class="btn_option" id="btn_microsoft_auth_redirect">
+            <div class="btn_ico_container">
+              <span class="btn_option_icon_container">
+                <img class="btn_option_icon" src="/ASSETS/ICONS/microsoft.svg" alt="twitter logo svg">
+              </span>
+              <span class="btn_option_title_containet">
+                <p class="btn_option_title">Continue With Microsoft</p>
+              </span>
+            </div>
+          </button>
+        </div>
       </div>
     </main>
   </body>

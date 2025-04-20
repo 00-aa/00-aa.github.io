@@ -1,18 +1,25 @@
-  import { AuthEmailGoogle, OnAuthChange } from '/firebase.js';
+  import { PopupAuthGoogle, OnAuthStateChanged, IsUserVald } from '/firebase.js';
   
-  let GoogleAuthButton = document.getElementById('btn_auth_google');
-  let FacebookAuthButton = document.getElementById('btn_auth_facebook');
-  let AppleAuthButton = document.getElementById('btn_auth_apple');
+  btn_google_auth_redirect.onclick = ()=>{
+    navigator.vibrate(200);
+    PopupAuthGoogle().then((CurrentUser)=>{
+      if(CurrentUser){
+        location = '/HOME/index.html';
+      }
+    }).catch((err)=>{
+      console.error(err);
+    });
+  }
   
-  GoogleAuthButton.onclick = AuthEmailGoogle;
-  FacebookAuthButton.onclick = AuthEmailGoogle;
-  AppleAuthButton.onclick = AuthEmailGoogle;
+  let UserValidation = await IsUserVald();
+  if(UserValidation){
+    location = '/HOME/index.html';
+  }
   
-  OnAuthChange((CurrUser)=>{
-    if(CurrUser){
-      window.location.href = '/HOME/index.html';
+  OnAuthStateChanged((CurrentUser)=>{
+    if(CurrentUser){
+      location = '/HOME/index.html';
     }
-  });
-  
-  
-  
+  }).catch((err)=>{
+    console.error(err);
+  })
