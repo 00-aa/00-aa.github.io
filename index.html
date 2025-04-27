@@ -1,3 +1,15 @@
-<script>
-  location = "/HOME/index.html";
-</script>
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" sizes="1024x1024" href="/0.png">
+    <meta property="og:image" content="https://00-aa.github.io/0.png">
+    <meta property="og:image:secure_url" content="https://00-aa.github.io/0.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt" content="website logo png">
+  </head>
+  <script>
+    if(!(localStorage.getItem("RKUserValid") === "true") && !(location.pathname === "/AUTH/E-MAIL/index.html") ){
+      //login expired
+      location = "/AUTH/E-MAIL/index.html";
+    }
+  </script>
