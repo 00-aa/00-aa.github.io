@@ -1,12 +1,11 @@
   {
-    "name": "RK",
+    "name": "RK SERVICES",
     "short_name": "RK SERVICES",
-    "id": "V1.1",
     "description": "App for Everyone To Buy Sell Items.",
     "display": "standalone",
     "background_color": "#000",
     "theme_color": "#000",
-    "start_url": "/HOME/index.html",
+    "start_url": "/",
     "scope": "/",
     "icons": [{
       "src": "/0.png",
