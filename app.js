@@ -10,9 +10,7 @@
   OnAuthStateChanged((CurrUser)=>{
     if(CurrUser){
       localStorage.setItem("RKUserValid","true");
-      localStorage.setItem("RKLastLogIn", Date.now());
     }else{
-      localStorage.setItem("RKUserValid","false")
       if(!(location.pathname === "/AUTH/E-MAIL/index.html")){
         location = "/AUTH/E-MAIL/index.html";
       }
