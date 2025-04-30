@@ -10,7 +10,7 @@
   OnAuthStateChanged((CurrUser)=>{
     if(CurrUser){
       localStorage.setItem("RKUserValid","true");
-      if(location.pathname === "/index.html"){
+      if(location.pathname === "/"){
         location = "/HOME/index.html";
       }
     }else{
