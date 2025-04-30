@@ -20,7 +20,6 @@
     }
   });
   
-  
   //PWA THINGS
   addEventListener("load",()=>{
     // REGISTER SEVICE-WORKER
